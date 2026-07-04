@@ -3,11 +3,10 @@
 @use "./mixins/fonts" as fonts;
 
 .mainContainer {
-  width: auto;
   margin: 2em;
 
   @include layout.flex($direction: column, $gap: 2em);
-  justify-content: center;
+
   align-items: center;
 
   h1 {
@@ -26,9 +25,9 @@
   }
 
   .card {
-    margin: 0;
     width: 100%;
     max-width: 700px;
+
     @include layout.flex($direction: column, $gap: 1em);
 
     h2 {
@@ -37,19 +36,23 @@
 
       font-family: fonts.$font-heading;
       font-size: 1.5em;
+
       color: colors.$text-primary;
       text-shadow: 1px 1px 0 colors.$border-light;
     }
 
     form {
-      @include layout.flex($direction: column, $gap: 1em);
       width: 100%;
+
+      @include layout.flex($direction: column, $gap: 1em);
     }
 
     textarea {
       width: 100%;
       min-height: 100px;
       padding: 1em;
+
+      box-sizing: border-box;
 
       resize: none;
       outline: none;
@@ -58,8 +61,6 @@
 
       border: 4px solid colors.$border-dark;
       border-radius: 5px;
-
-      box-sizing: border-box;
 
       font-family: fonts.$font-body;
       font-size: 2em;
@@ -72,6 +73,8 @@
       button {
         flex: 1;
         padding: 1em;
+
+        cursor: pointer;
 
         background-color: colors.$button;
 
