@@ -3,9 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App</title>
+    <title>Morse Code Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
     <script type="module" src="./app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main class="mainContainer">
+      <h1>MORSE CODE TRANSLATOR</h1>
+      <article class="card">
+        <h2>INPUT</h2>
+        <form id="translator-form">
+          <textarea
+            id="input-text"
+            placeholder="Enter text or Morse code..."
+          ></textarea>
+          <div class="buttonGroup">
+            <button type="submit" id="to-morse-btn">TO MORSE</button>
+
+            <button type="submit" id="to-english-btn">TO ENGLISH</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2>OUTPUT</h2>
+        <textarea id="output-text" readonly></textarea>
+        <div class="buttonGroup">
+          <button type="button" id="clear-btn">CLEAR</button>
+        </div>
+      </article>
+    </main>
+  </body>
 </html>
