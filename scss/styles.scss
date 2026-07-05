@@ -1,31 +1,36 @@
 @use "./mixins/layout" as layout;
+@use "./mixins/media" as media;
 @use "./mixins/colors" as colors;
 @use "./mixins/fonts" as fonts;
 
 .mainContainer {
-  margin: 2em;
+  width: 100%;
+  margin: 0;
+  padding: 2em 0;
 
   @include layout.flex($direction: column, $gap: 2em);
 
   align-items: center;
+  justify-content: center;
 
   h1 {
     margin: 0;
     text-align: center;
 
     font-family: fonts.$font-heading;
-    font-size: 2em;
+    font-size: 1.5em;
 
     color: colors.$border-dark;
 
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    line-height: 1.5em;
 
     text-shadow: 2px 2px 0 colors.$border-light;
   }
 
   .card {
-    width: 100%;
+    width: 80%;
     max-width: 700px;
 
     @include layout.flex($direction: column, $gap: 1em);
@@ -35,7 +40,7 @@
       text-align: center;
 
       font-family: fonts.$font-heading;
-      font-size: 1.5em;
+      font-size: 1em;
 
       color: colors.$text-primary;
       text-shadow: 1px 1px 0 colors.$border-light;
@@ -92,6 +97,86 @@
         &:active {
           background-color: colors.$button-active;
           transform: translateY(3px);
+        }
+      }
+    }
+  }
+}
+
+@include media.md {
+  .mainContainer {
+    h1 {
+      font-size: 1.75em;
+    }
+
+    .card {
+      h2 {
+        font-size: 1.1em;
+      }
+
+      textarea {
+        min-height: 120px;
+        font-size: 2.2em;
+      }
+
+      .buttonGroup {
+        button {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+@include media.lg {
+  .mainContainer {
+    h1 {
+      font-size: 2em;
+    }
+
+    .card {
+      width: 75%;
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      textarea {
+        min-height: 140px;
+        font-size: 2.4em;
+      }
+
+      .buttonGroup {
+        button {
+          font-size: 0.85em;
+        }
+      }
+    }
+  }
+}
+
+@include media.xl {
+  .mainContainer {
+    h1 {
+      font-size: 2.2em;
+    }
+
+    .card {
+      width: 70%;
+      max-width: 800px;
+
+      h2 {
+        font-size: 1.25em;
+      }
+
+      textarea {
+        min-height: 160px;
+        font-size: 2.5em;
+      }
+
+      .buttonGroup {
+        button {
+          font-size: 0.9em;
         }
       }
     }
