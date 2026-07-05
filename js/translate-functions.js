@@ -1,9 +1,9 @@
 export function isMorse(str) {
-  return /^[.\-/ ]+$/.test(str.trim());
+  return /^[.\-/ ]+$/.test(str);
 }
 
 export function isEnglish(str) {
-  return /^[a-zA-Z ]+$/.test(str.trim());
+  return /^[a-zA-Z ]+$/.test(str);
 }
 
 export function translateToMorse(str, morse) {

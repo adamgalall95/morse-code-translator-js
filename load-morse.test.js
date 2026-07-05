@@ -6,6 +6,7 @@ import {
 } from "./js/translate-functions";
 
 import translate from "./js/translate-functions";
+
 const morse = {
   A: ".-",
   B: "-...",
